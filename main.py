@@ -80,6 +80,8 @@ for file in os.listdir(input_folder):
     plt.ylim(bottom=0)
     plt.ylabel('$g^{(2)}(t)$')
     plt.xlabel('Time (ns)')
+    N_color_centers = round(eval_result.best_values.get('N'), 2)
+    plt.legend(title = f"N = {N_color_centers}")
     plt.title(file)
     plt.savefig(os.path.join(output_folder, '{0}_plot_FIT'.format(Path(file).stem)))
     plt.show()
